@@ -1,12 +1,12 @@
 {
   "name": "aintec2017",
-  "homepage": "https://github.com/padillareyj/aintec-2017",
+  "description": "",
+  "main": "main.js",
   "authors": [
     "Rey Padilla <padilla.reyj@gmail.com>"
   ],
-  "description": "",
-  "main": "",
-  "license": "MIT",
+  "license": "ISC",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-css": "^3.3.7",
-    "jquery": "^3.2.1"
+    "jquery": "2",
+    "bootstrap": "^3.3.7"
   }
 }
