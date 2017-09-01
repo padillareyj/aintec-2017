@@ -11,12 +11,15 @@ var gulp = require('gulp'),
 	gulpFilter = require('gulp-filter'),
 	minifycss = require('gulp-minify-css'),
 	mainBowerFiles = require('main-bower-files'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+	browserSync = require('browser-sync'),
+	reload = browserSync.reload;
 
 gulp.task('html', function() {
   return gulp.src('src/*.html')
     .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(reload({stream:true}));
 });
 
 // image processing
@@ -32,8 +35,7 @@ gulp.task('images', function() {
 gulp.task('scripts', function() {
   return gulp.src([
 				'bower_components/jquery/dist/jquery.js',
-				'bower_components/bootstrap/dist/js/bootstrap.js',
-				'bower_components/smoothscroll.js',
+				'bower_components/bootstrap/dist/js/bootstrap.js', 
 				'src/js/*.js'
 				])
 	.pipe(sourcemaps.init())
@@ -69,10 +71,23 @@ gulp.task('styles', function() {
 	      }))	
 		//.pipe(rename('main.min.css'))
 		.pipe(sourcemaps.write('../maps'))
-		.pipe(gulp.dest('dist/css'));
-		//.pipe(reload({stream:true}));
+		.pipe(gulp.dest('dist/css'))
+		.pipe(reload({stream:true}));
 });
 
+
+
+// browser sync
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+});
+
+
+ 
 
  
 // Error log
@@ -83,4 +98,12 @@ function errorlog(err){
 }
 
 
-gulp.task('default', ['scripts', 'styles', 'html', 'images']);
+gulp.task ('watch', function(){
+	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch('src/js/**/*.js', ['scripts']);
+  	gulp.watch('src/**/*.html', ['html']);
+  	gulp.watch('src/images/**/*.*', ['images']);
+});
+
+
+gulp.task('default', ['scripts', 'styles', 'html', 'images','browser-sync', 'watch']);
