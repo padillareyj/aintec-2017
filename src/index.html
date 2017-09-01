@@ -7,7 +7,7 @@
 		<title>Asian Internet Engineering Conference (AINTEC 2017)</title>
 		<meta name="keywords" content="HTML5,CSS3,Template" />
 		<meta name="description" content="" />
-		<meta name="Author" content="Rey Padilla" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -16,9 +16,7 @@
 		<!-- WEB FONTS : use %7C instead of | (pipe) -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
-	 
-		<!-- link href="css/main.min.css" rel="stylesheet" type="text/css" / -->
-
+		<!-- CORE CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 		
 		<!-- THEME CSS -->
@@ -28,13 +26,60 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="css/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
-
 	</head>
 
-	<body class="enable-animation">
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/boxed_background/1.jpg"
+	-->
+	<body class="smoothscroll enable-animation">
 
 		<!-- wrapper -->
 		<div id="wrapper">
+
+			<!-- 
+				AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.noborder 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent noborder"
+			-->
 			<div id="header" class="sticky clearfix">
 
 				<!-- TOP NAV -->
@@ -49,11 +94,25 @@
 						<!-- Logo -->
 						<a class="logo pull-left" href="/aintec2017">
 							<img src="images/aintec2017.png"  >
+						</a>
+
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
 						<div class="navbar-collapse pull-right nav-main-collapse collapse">
 							<nav class="nav-main">
 
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li  ><!-- HOME -->
+									<li class="active"><!-- HOME -->
 										<a href="#home">
 											HOME
 										</a>
@@ -169,22 +228,22 @@
 							</header>
 						<div class="col-md-4 col-xs-12">
 							<div class="text-center">
-								<a href="http://interlab.ait.ac.th"><img border="0" title="Internet Education and Research Laboratory"  alt="intERLab" src="images/interlab.png"   width="180"/></a>
-								<a href="http://www.ait.ac.th"><img border="0" alt="Asian Institute of Technology" src="images/ait_logo1.jpg"  title="Asian Institute of Technology" width="85"/></a>
+								<a href="http://interlab.ait.ac.th" target="_blank"><img border="0" alt="intERLab" alt="Internet Education and Research Laboratory"  src="images/interlab.png" width="180"/></a>
+								<a href="http://www.ait.ac.th" target="_blank"><img  border="0" alt="Asian Institute of Technology" title="Asian Institute of Technology"  src="images/ait_logo1.jpg"   width="85"/></a>
 								<h4>intERLab/AIT</h4>
 								 
 							</div>
 						</div>
 						<div class="col-md-4 col-xs-12">
 							<div class="text-center">
-								<img src="images/thairen.jpg" border="0" alt="ThaiREN" style="cursor:pointer;pointer:pointer"  width="240">
+								<a href="http://www.thairen.net.th/" target="_blank"><img src="images/thairen.jpg" border="0" alt="ThaiREN"    width="240"></a>
 								<h4>ThaiREN</h4>
 								 
 							</div>
 						</div>
 						<div class="col-md-4 col-xs-12">
 							<div class="text-center"><br>
-								<img height="45" border="0" width="100" src="images/wide-s.gif"  />
+								<a href="http://www.wide.ad.jp/" target="_blank"><img height="45" border="0" width="100" src="images/wide-s.gif"    /></a>
 								<h4>WIDE</h4>
 								 
 							</div>
@@ -362,28 +421,73 @@
 	 Submissions must be original, unpublished work, and not have been submitted to another conference or journal for publication. Papers must be submitted in electronic format following the instructions provided on the AINTEC Web site . Paper length cannot exceed 8 pages in the 10pts <a href="/aintec/res/sigcomm/sig-alternate-10pt.cls">"ACM SIGCOMM format"</a>. <!--AINTEC 2017 proceedings will be included in the ACM Digital Library-->. Submission of a paper implies that should the paper be accepted for publication in the conference proceedings, at least one of the authors will register and present the paper in the conference.
 
 	 
-	 
+
+
 	
 		<br><br>
 	 <strong>Important note:</strong> Authors of accepted papers must pay for their registration on or before the camera ready version deadline.
 	 <br><br>
-					 
-	<strong>Important Dates:</strong> 
 
-   <table style="font-size:12pt!important;max-width:700px">				   
-	<tr><td>Abstract registration <br> </td><td>    <strong>  August  20, 2017
+<div class="row">
+  <div class="col-md-3"></div>
+   <div class="col-md-6">
+		<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h2 class="panel-title">Important Dates <i class="fa fa-exclamation-circle" aria-hidden="true"></i></h2>
+		</div>
+		<div class="panel-body">
+			The dates below are the deadlines for registration/submission
+		</div>
+		<table class="table">
+			<thead>
+		 
+			</thead>
+			<tbody>
+				<tr>
+					<td>Abstract registration
+					<div><strong><i>Extended</i></strong> <i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+					</td>
+					<td><s>August  20, 2017</s>
+						<div><strong>October 1, 2017</strong></div>
+					</td>
+					 
+				</tr>
+				<tr>
 				 
-	</strong></td></tr>
-	<tr><td width="200px">Full paper submission    </td><td>    <strong>  September  2, 2017 </strong></td></tr>
-	
- 	<tr><td>Acceptance notification  	</td><td> <strong>  October 16, 2017</strong> 
-	<!--<a href="accepted_papers.php#accepted">List of accepted papers</a>
-	--></td></tr>
-	
-	
-	<tr><td>Camera-ready  		</td><td>  <strong> November 5, 2017</strong></td></tr>
-	<tr><td>Conference		</td><td><strong> November 20 - 22, 2017 </strong></td></tr>
-	</table>
+					<td>Full paper submission
+						<div   ><strong><i>Extended</i></strong> <i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+					 </td>
+					<td><s>September  2, 2017</s>
+
+						<div><strong>October 1, 2017</strong></div>
+					</td>
+				</tr>
+				<tr>
+					 
+					<td>Acceptance notification </td>
+					<td>October 16, 2017</td>
+				</tr>
+				<tr>
+					 
+					<td>Camera-ready	 </td>
+					<td>November 5, 2017</td>
+				</tr>
+				<tr>
+					 
+					<td>Conference	 </td>
+					<td>November 20 - 22, 2017</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
+</div>			
+	 
+	 
+	 
+
+ 
 	
 	
 	<div class="text-center">
@@ -592,13 +696,17 @@
 							<ul class="footer-posts list-unstyled">
 								
 								<li>
+									Abstract Registration and Full paper submission extended
+									<small>September 2, 2017</small>
+								</li>
+								<li>
 										AINTEC 2017 Site is live
 									<small>January 2017</small>
 								</li>
+								
 								 
 							</ul>
-							<!-- /Latest Blog Post -->
-
+						 
 						</div>
 
 						<div class="col-md-2">
@@ -610,7 +718,7 @@
 								<li><a href="#speakers">Speakers</a></li>
 								<li><a href="#paper-submission">Paper Submission</a></li>
 								<li><a href="#accommodation">Accommodation</a></li>
-								<li><a href="/aintec/archive.php">Conference Archive</a></li>
+								<li><a href="http://interlab.ait.asia/aintec/archive.php">Conference Archive</a></li>
 								<li><a href="javascript:void(0)" onclick="alert('tba')">Register</a></li>								
 							</ul>
 							<!-- /Links -->
@@ -619,6 +727,8 @@
 
 						<div class="col-md-4">
 
+							 
+							
 							 
 							<!-- Social Icons -->
 							<div class="margin-top-20">
@@ -664,8 +774,11 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-	 
+		 
+		 
 		<script type="text/javascript" src="js/main.min.js"></script>
-
+		
+		<!-- STYLESWITCHER - REMOVE -->
+		
 	</body>
 </html>
