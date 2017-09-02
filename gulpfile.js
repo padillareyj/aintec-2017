@@ -27,7 +27,7 @@ gulp.task('images', function() {
 
   return gulp.src('src/images/**/*')
     .pipe(newer('dist/images'))
-    .pipe(imagemin({ optimizationLevel: 5 }))
+    .pipe(imagemin({ optimizationLevel: 9 }))
     .pipe(gulp.dest('dist/images'));
 });
 
