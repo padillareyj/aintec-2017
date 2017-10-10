@@ -26,6 +26,8 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="css/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+
 	</head>
 
 
@@ -148,7 +150,7 @@
 						<h4>REGISTRANT DETAILS</h4>
 						<div class="row">
 								<div class="col-md-2">
-									<div class="form-group">
+									<div class="form-group" id="p_title_group">
 														<select name="p_title" id="p_title" class="form-control">
 															<option value="">Title</option>
 															<option value="Prof">Prof</option>
@@ -158,43 +160,63 @@
 															  <option value="Mrs">Mrs</option>
 															  <option value="Eng">Eng</option>
 														</select>
+														<p class="help-block hidden" id="p_title_helper"></p>
 									</div>
 								</div>
-								<div class="col-md-5">
-									<input class="form-control" 	type="text" name="p_firstname" id="p_firstname" value="" placeholder="First Name" required />
+								<div class="col-md-5" >
+									<div class="form-group" id="p_firstname_group">
+										<input class="form-control" 	type="text" name="p_firstname" id="p_firstname" value="" placeholder="First Name" required1 />
+										    <p class="help-block hidden" id="p_firstname_helper"></p>
+
+									</div>
 								</div>
-								<div class="col-md-5">
-									<input class="form-control" type="text" name="p_lastname" id="p_lastname" value="" placeholder="Last Name" required />
+								<div class="col-md-5" >
+									<div class="form-group" id="p_lastname_group">
+										<input class="form-control" type="text" name="p_lastname" id="p_lastname" value="" placeholder="Last Name" required1 />
+										<p class="help-block hidden" id="p_lastname_helper"></p>
+									</div>
 								</div>
 						</div>
 						<div class="row">
 								<div class="col-md-6">
-									<div class="form-group">
-										<input  class="form-control"  type="text" name="p_jobtitle" id="p_jobtitle" value="" placeholder="Job Title"  required />
+									<div class="form-group" id="p_jobtitle_group" >
+										<input  class="form-control"  type="text" name="p_jobtitle" id="p_jobtitle" value="" placeholder="Job Title"  required1 />
+										<p class="help-block hidden" id="p_jobtitle_helper"></p>
 									</div>
 								</div>
 								<div class="col-md-6">
-									<input class="form-control" type="text"  name="p_badge" id="p_badge" value="" placeholder="Name to appear in Badge"   required />
+									<div class="form-group" id="p_badge_group" >
+										<input class="form-control" type="text"  name="p_badge" id="p_badge" value="" placeholder="Name to appear in Badge"   required1 />
+										<p class="help-block hidden" id="p_badge_helper"></p>
+									</div>
 								</div>
 						</div>
 						<div class="row">
 								<div class="col-md-6">
-									<div class="form-group">
-										<input  class="form-control"  type="text" name="p_organization" id="p_organization" value="" placeholder="Organization"  required />
+									<div class="form-group" id="p_organization_group">
+										<input  class="form-control"  type="text" name="p_organization" id="p_organization" value="" placeholder="Organization"  required1 />
+										<p class="help-block hidden" id="p_organization_helper"></p>
 									</div>
 								</div>
 								<div class="col-md-6">
-									<input class="form-control" type="text"  name="p_phone" id="p_phone" value="" placeholder="Phone" required />
+									<div class="form-group" id="p_phone_group">
+										<input class="form-control" type="text"  name="p_phone" id="p_phone" value="" placeholder="Phone"  />
+										<p class="help-block hidden" id="p_phone_helper"></p>
+									</div>
 								</div>
 						</div>
 							<div class="row">
 								<div class="col-md-6">
-									<div class="form-group">
-										<input  class="form-control"  type="text" name="p_address" id="p_address" value="" placeholder="Address" required />
+									<div class="form-group" id="p_address_group">
+										<input  class="form-control"  type="text" name="p_address" id="p_address" value="" placeholder="Address" required1 />
+										<p class="help-block hidden" id="p_address_helper"></p>
 									</div>
 								</div>
 								<div class="col-md-6">
-									<input class="form-control" type="email" name="p_email" id="p_email" value="" placeholder="Email" required />
+									<div class="form-group" id="p_email_group">
+										<input class="form-control" type="text" name="p_email" id="p_email" value="" placeholder="Email" required1 />
+										<p class="help-block hidden" id="p_email_helper"></p>
+									</div>
 								</div>
 						</div>
 
@@ -205,8 +227,11 @@
 								Do you need invitation letter from AINTEC 2017 local organizers for visa purposes?
 							</div>
 							<div class="col-md-12">
-								<label class="radio-inline" for="invitation-yes"><input   type="radio" id="invitation-yes" value="Yes" name="p_invitation" required> Yes</label>
-								<label class="radio-inline" for="invitation-no"><input  type="radio" id="invitation-no" value="No"  name="p_invitation" required> No </label>
+								<div class="form-group"   id="p_invitation_group">
+								<label class="radio-inline" for="p_invitation"><input   type="radio" id="p_invitation" value="Yes" name="p_invitation" required1> Yes</label>
+								<label class="radio-inline" for="invitation-no"><input  type="radio" id="invitation-no" value="No"  name="p_invitation" required1> No </label>
+								<p class="help-block hidden" id="p_invitation_helper"></p>
+								</div>
 						</div>
 
 						</div>
@@ -216,14 +241,15 @@
 						<div class="row">
 
 							<div class="col-md-12">
-								<label class="radio-inline" for="AINTEC_S">
-									<input   type="radio"  id="AINTEC_S" value="350" name="p_regfee" required> [ 350 USD ] <strong>STUDENTS</strong> </label>
-
-							</div>
-							<div class="col-md-12">
+								<div class="form-group" id="p_regfee_group">
+								<label class="radio-inline" for="p_regfee">
+									<input   type="radio"  id="p_regfee" value="200" name="p_regfee" required1 > [ 200 USD ] <strong>STUDENTS</strong> </label>
 
 								<label class="radio-inline" for="AINTEC_NS">
-									<input   type="radio" id="AINTEC_NS" value="500" name="p_regfee"  required> [ 500 USD ] <strong>NON-STUDENTS</strong> </label>
+									<input   type="radio" id="AINTEC_NS" value="500" name="p_regfee"  required1 > [ 500 USD ] <strong>NON-STUDENTS</strong> </label>
+
+									<p class="help-block hidden" id="p_regfee_helper"></p>
+								</div>
 							</div>
 
 						</div>
@@ -235,8 +261,11 @@
 									Do you want to join the Excursion and Welcome Dinner (2nd Day @ Nov. 21)
 							</div>
 							<div class="col-md-12">
-								<label class="radio-inline" for="dinner_yes"><input   type="radio"   id="dinner_yes" value="Yes" name="dinner"  required> Yes </label>
-								<label class="radio-inline" for="dinner_no"><input type="radio"  id="dinner_no" value="No" name="dinner"  required> NO </label>
+								<div class="form-group" id="dinner_group">
+									<label class="radio-inline" for="dinner"><input   type="radio"   id="dinner" value="Yes" name="dinner"  required1> Yes </label>
+									<label class="radio-inline" for="dinner_no"><input type="radio"  id="dinner_no" value="No" name="dinner"  required1> NO </label>
+									<p class="help-block hidden" id="dinner_helper"></p>
+								</div>
 							</div>
 
 						</div>
@@ -287,12 +316,15 @@
 					   </div>
 					    <div class="row" >
 						   	<div class="col-md-12">
-						   		 	<label class="radio-inline" for="bank">
-						   		 		<input   type="radio"  id="bank" value="Bank Draft" onclick="showHide('bank')" name="p_payment" required> BANK DRAFT </label>
+						   		<div class="form-group" id="p_payment_group">
+						   		 	<label class="radio-inline" for="p_payment">
+						   		 		<input   type="radio"  id="p_payment" value="Bank Draft" onclick="showHide('bank')" name="p_payment" required1> BANK DRAFT </label>
 									<label class="radio-inline" for="wire">
-						   		 	<input   type="radio"  id="wire" value="Wire Transfer" onclick="showHide('wire')" name="p_payment" required>WIRE TRANSFER</label>
+						   		 	<input   type="radio"  id="wire" value="Wire Transfer" onclick="showHide('wire')" name="p_payment" required1>WIRE TRANSFER</label>
 						   		 	 <label class="radio-inline" for="creditcard">
-						   		 <input   type="radio"  id="creditcard" value="Credit Card" onclick="showHide('credit')" name="p_payment" required> CREDIT CARD </label>
+						   		 <input   type="radio"  id="creditcard" value="Credit Card" onclick="showHide('credit')" name="p_payment" required1> CREDIT CARD </label>
+						   		 <p class="help-block hidden" id="p_payment_helper"></p>
+						   		</div>
 						   	</div>
 						 </div>
 
@@ -344,7 +376,7 @@
 						</div>
 
 						<div class="row margin-top-60">
-							<input type="submit" class="btn btn-primary btn-lg" value="Register" >
+							<input type="submit" class="btn btn-primary btn-lg" id="registerButton" value="Register" >
 						</div>
 				</div>
 
@@ -477,6 +509,8 @@
 
 		<!-- JAVASCRIPT FILES -->
 		<script type="text/javascript" src="js/main.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
  		<script  type="text/javascript">
 			function showHide(name){
 				$("#bankInstruction").hide();
@@ -489,13 +523,72 @@
 			showHide('');
 			function checkInput(){
 
+				$("#registerButton").attr('disabled',true);
+				$("#registerButton").val('Please wait...');
+
+				inputFields = ['p_title','p_firstname','p_lastname','p_jobtitle','p_badge',
+								'p_organization','p_phone','p_address','p_email','p_invitation',
+								'p_regfee','dinner','p_payment'
+								]
+				for (var i=0; i < inputFields.length; i++){
+					 $('#'+inputFields[i]+'_group').removeClass('has-error');
+				     $('#'+inputFields[i]+'_helper').addClass('hidden');
+				}
+
 				$.ajax({
 				     type: "POST",
 				     url: 'registerSubmit.php',
 				     data: $("#formInput").serialize(),
 				     success: function(result) {
-				        //data = $.parseJSON(result);
-				        console.log($result);
+				         data = $.parseJSON(result);
+				        if (!data['success']){
+
+
+							focused = false;
+							for (var k in data['error']){
+
+							    if ( data['error'].hasOwnProperty(k)) {
+							         //console.log("Key is " + k + ", value is" +  data['error'][k]);
+							         $('#'+k+'_group').addClass('has-error');
+							         $('#'+k+'_helper').removeClass('hidden');
+							         $('#'+k+'_helper').html(data['error'][k]);
+							         if (!focused)  {
+							         	console.log('focused at #'+k);
+							         	$('#'+k).focus().select();
+							         	  focused = true;
+							         }
+
+							    }
+							}
+
+							$.alert({
+							    title: 'Submission Error',
+							     type: 'red',
+							    content: data['error']['show'],
+							});
+
+
+							$("#registerButton").attr('disabled',false);
+							$("#registerButton").val('Register');
+				        }else {
+				        	$.confirm({
+						    title: 'Registration',
+						    content: 'Your registration was succesful. An email receipt was sent to your E-mail address.',
+						      buttons: {
+						         formSubmit: {
+							            text: 'Return to Home Page',
+							            btnClass: 'btn-blue',
+							            action: function () {
+							            	location.href='/aintec2017';
+							            }
+							        },
+
+							    },
+						});
+				        }
+
+
+
 				     }
 				});
 				return false;
