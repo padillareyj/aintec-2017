@@ -132,7 +132,7 @@
 				</div>
 			</section>
 
-		  <form method="post"  onsubmit="checkInput();">
+		  <form id="formInput" method="post"  onsubmit="return checkInput();">
 
 			<section    >
 				<div class="container">
@@ -202,7 +202,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								Do you need invitation letter from AINTEC 2016 local organizers for visa purposes?
+								Do you need invitation letter from AINTEC 2017 local organizers for visa purposes?
 							</div>
 							<div class="col-md-12">
 								<label class="radio-inline" for="invitation-yes"><input   type="radio" id="invitation-yes" value="Yes" name="p_invitation" required> Yes</label>
@@ -488,14 +488,14 @@
 			}
 			showHide('');
 			function checkInput(){
-				alert('Please check one of the fields');
-				$("#registerSubmit").serialize() // returns all the data in your form
+
 				$.ajax({
 				     type: "POST",
-				     url: 'your url',
-				     data: $("#registerSubmit").serialize(),
+				     url: 'registerSubmit.php',
+				     data: $("#formInput").serialize(),
 				     success: function(result) {
-				        console.log(result);
+				        //data = $.parseJSON(result);
+				        console.log($result);
 				     }
 				});
 				return false;
