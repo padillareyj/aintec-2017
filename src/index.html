@@ -26,6 +26,7 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="css/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 	</head>
 
 	<body class="enable-animation">
@@ -415,8 +416,10 @@
 				</tr>
 				<tr>
 
-					<td>Acceptance notification </td>
-					<td><strong>October 16, 2017</strong></td>
+					<td>Acceptance notification
+
+					</td>
+					<td><strong>October 19, 2017</strong></td>
 				</tr>
 				<tr>
 
@@ -862,7 +865,7 @@
 								<li><a href="#paper-submission">Paper Submission</a></li>
 								<li><a href="#accommodation">Accommodation</a></li>
 								<li><a href="http://interlab.ait.asia/aintec/archive.php">Conference Archive</a></li>
-								<li><a href="javascript:void(0)" onclick="alert('tba')">Register</a></li>
+								<li><a href="registration.html">Register</a></li>
 							</ul>
 							<!-- /Links -->
 
@@ -920,7 +923,16 @@
 
 
 		<script type="text/javascript" src="js/main.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+		<script>
 
+				 $.dialog({
+			    title: 'Update',
+			    content: 'Registration is now open. <br> Paper Acceptance notification is moved to October 19th. ',
+				});
+
+
+		</script>
 
 
 	</body>
